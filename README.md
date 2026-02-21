@@ -131,7 +131,7 @@ Live Link:
 Frontend Developer
 
 LinkedIn:
-[https://www.linkedin.com/in/keval-jamnapara/](https://www.linkedin.com/in/keval-jamnapara/)
+[https://www.linkedin.com/in/keval1344/](https://www.linkedin.com/in/keval1344/)
 
 GitHub:
 [https://github.com/keval1306](https://github.com/keval1306)
