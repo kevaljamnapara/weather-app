@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛅</text></svg>">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Side Navigation -->
+    <aside class="side-nav">
+        <div class="nav-item active">
+            <i class="fas fa-cloud-sun"></i>
+            <span>Weather</span>
+        </div>
+        <div class="nav-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Cities</span>
+        </div>
+        <div class="nav-item">
+            <i class="fas fa-heart"></i>
+            <span>Favorites</span>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Search Section -->
+        <div class="search-bar">
+            <form id="searchForm" class="search-form">
+                <i class="fas fa-search"></i>
+                <input type="text" id="cityInput" placeholder="Search for cities..." autocomplete="off">
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="spinner-container hidden">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Weather Container -->
+        <div id="weatherDisplay" class="weather-container">
+            <!-- Main Weather Card -->
+            <div class="main-weather-card">
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="cityName">New York</span>
+                </div>
+                <h1 class="condition" id="condition">Thunder</h1>
+                <div class="temperature-display">
+                    <span class="temp-large" id="temperature">16°C</span>
+                    <i id="weatherIcon" class="wi wi-thunderstorm weather-icon-large"></i>
+                </div>
+                <p class="date-time" id="dateTime">Sunday | 12 Dec 2023</p>
+
+                <!-- 5-Day Forecast -->
+                <div class="forecast-strip" id="forecastDisplay">
+                    <!-- Forecast items will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Air Conditions Panel -->
+            <div class="air-conditions-panel">
+                <h3>Air Conditions</h3>
+                <div class="conditions-grid">
+                    <div class="condition-item">
+                        <i class="fas fa-temperature-half"></i>
+                        <div class="condition-details">
+                            <span class="condition-label">Feels Like</span>
+                            <span class="condition-value" id="feelsLike">30°</span>
+                        </div>
+                    </div>
+                    <div class="condition-item">
+                        <i class="fas fa-wind"></i>
+                        <div class="condition-details">
+                            <span class="condition-label">Wind</span>
+                            <span class="condition-value" id="windSpeed">0.8 km/hr</span>
+                        </div>
+                    </div>
+                    <div class="condition-item">
+                        <i class="fas fa-droplet"></i>
+                        <div class="condition-details">
+                            <span class="condition-label">Chance of Rain</span>
+                            <span class="condition-value" id="rainChance">2%</span>
+                        </div>
+                    </div>
+                    <div class="condition-item">
+                        <i class="fas fa-sun"></i>
+                        <div class="condition-details">
+                            <span class="condition-label">UV Index</span>
+                            <span class="condition-value" id="uvIndex">3</span>
+                        </div>
+                    </div>
+                    <div class="condition-item">
+                        <i class="fas fa-eye"></i>
+                        <div class="condition-details">
+                            <span class="condition-label">Visibility</span>
+                            <span class="condition-value" id="visibility">10 km</span>
+                        </div>
+                    </div>
+                    <div class="condition-item">
+                        <i class="fas fa-compress"></i>
+                        <div class="condition-details">
+                            <span class="condition-label">Pressure</span>
+                            <span class="condition-value" id="pressure">1013 mb</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Favorites Section -->
+                <div class="favorites-inline">
+                    <h4>Favorite Cities</h4>
+                    <div id="favoritesList" class="fav-list"></div>
+                    <p id="noFavorites" class="no-fav-msg">No favorites yet</p>
+                    <button id="addFavoriteBtn" class="btn-favorite">
+                        <i class="fas fa-heart"></i> Add to Favorites
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
